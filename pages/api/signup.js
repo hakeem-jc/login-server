@@ -9,7 +9,7 @@ export default async function handler(req, res) {
             const users = db.collection('users');
             const result = await users.insertOne(data);
             console.log(result);
-            db.close();
+            client.close();
             res.status(200).json({ response:"New User Created" });
         } catch (err) {
             console.error(err);
